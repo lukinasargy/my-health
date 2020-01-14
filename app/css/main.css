@@ -412,14 +412,6 @@ body textarea {
   border: #666 1px solid;
   outline: 0
 }
-body input:focus:required:invalid,
-body textarea:focus:required:invalid {
-  border-color: red
-}
-body input:required:valid,
-body textarea:required:valid {
-  border-color: green
-}
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -458,7 +450,8 @@ section {
   border: 2px solid #5489c3;
   border: none;
   padding: 24px 30px;
-  background-color: #e70067
+  background-color: #e70067;
+  cursor: pointer
 }
 .btn-red:active,
 .btn-red:focus,
@@ -470,6 +463,9 @@ section {
 .btn-red:focus,
 .btn-red:hover {
   background-color: #c1085b
+}
+.title {
+  font-size: 36px
 }
 /*!
 *
@@ -577,7 +573,6 @@ DEFAULT CSS END
   text-align: center
 }
 .slider__title {
-  font-size: 36px;
   margin-bottom: 40px
 }
 .slider__text {
@@ -587,19 +582,18 @@ DEFAULT CSS END
   margin-bottom: 150px
 }
 .about {
-  padding-bottom: 120px;
+  padding-bottom: 50px;
   position: relative
 }
 .about:before {
   width: 100%;
-  height: 1000px;
   top: -100px;
   z-index: 0;
   content: '';
   position: absolute;
   top: 0;
   width: 100%;
-  height: 1000px;
+  height: 900px;
   background-image: url(../img/bg2.png);
   background-repeat: no-repeat;
   background-position: 50% 0
@@ -614,7 +608,6 @@ DEFAULT CSS END
   position: relative
 }
 .about__title {
-  font-size: 36px;
   margin-bottom: 30px
 }
 .about__subtitle {
@@ -633,6 +626,61 @@ DEFAULT CSS END
 }
 .about__text {
   color: #60759d
+}
+.order {
+  padding-top: 152px;
+  padding-bottom: 160px;
+  background: rgba(96,117,157,.1)
+}
+.order__container {
+  text-align: center
+}
+.order__title {
+  margin-bottom: 55px
+}
+.order__text {
+  font-size: 24px;
+  width: 660px;
+  display: inline-block;
+  margin-bottom: 44px
+}
+.order__input {
+  padding: 23px 20px;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  border: 1px solid #60759d;
+  background-color: transparent;
+  color: #60759d;
+  font-size: 14px;
+  line-height: 14px;
+  min-width: 360px;
+  margin-right: 40px
+}
+.order__input::-webkit-input-placeholder {
+  color: #a8b2bf
+}
+.order__input::-moz-placeholder {
+  color: #a8b2bf
+}
+.order__input::-ms-input-placeholder {
+  color: #a8b2bf
+}
+.order__input::placeholder {
+  color: #a8b2bf
+}
+.order__btn {
+  line-height: 1;
+  padding: 23px 39px
+}
+.order__info {
+  margin-top: 20px;
+  font-weight: 700
+}
+.order__info--valid {
+  color: #60759d
+}
+.order__info--invalid {
+  color: #e70067
 }
 .slick-dots {
   padding: 0 15px;

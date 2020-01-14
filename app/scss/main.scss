@@ -455,13 +455,13 @@ body {
 		border: #666 1px solid;
 		outline: none;
 
-		&:focus:required:invalid {
-			border-color: red;
-		}
-
-		&:required:valid {
-			border-color: green;
-		}
+//		&:focus:required:invalid {
+//			border-color: red;
+//		}
+//
+//		&:required:valid {
+//			border-color: green;
+//		}
 	}
 }
 
@@ -500,12 +500,15 @@ section {
 	border: none;
 	padding: 24px 30px;
 	background-color: $color-two;
-
+cursor: pointer;
 	&:hover,
 	&:focus,
 	&:active {
 		background-color: #c1085b;
 	}
+}
+.title {
+	font-size: 36px;
 }
 
 /*!
@@ -593,7 +596,6 @@ DEFAULT CSS END
 	text-align: center;
 
 	&__title {
-		font-size: 36px;
 		margin-bottom: 40px;
 	}
 
@@ -608,18 +610,17 @@ DEFAULT CSS END
 }
 
 .about {
-	padding-bottom: 120px;
+	padding-bottom: 50px;
 	position: relative;
 	&:before {
 		width: 100%;
-		height: 1000px;
 		top: -100px;
 		z-index: 0;
 		content: '';
 		position: absolute;
 		top: 0;
 		width: 100%;
-		height: 1000px;
+		height: 900px;
 		background-image: url(../img/bg2.png);
 		background-repeat: no-repeat;
 		background-position: 50% 0;
@@ -636,7 +637,6 @@ DEFAULT CSS END
 	}
 
 	&__title {
-		font-size: 36px;
 		margin-bottom: 30px;
 	}
 
@@ -661,7 +661,55 @@ DEFAULT CSS END
 		color: $color-one;
 	}
 }
-
+.order {
+	padding-top: 152px;
+	padding-bottom: 160px;
+	background: rgba(96,117,157,0.1);
+	&__container {
+		text-align: center;
+	}
+	&__title {
+		margin-bottom: 55px;
+	}
+	&__text {
+		font-size: 24px;
+		width: 660px;
+		display: inline-block;
+		margin-bottom: 44px;
+	}
+	&__form {
+		
+	}
+	&__input {
+		padding: 23px 20px;
+		border-radius: 30px;
+		border: 1px solid $color-one;
+		background-color: transparent;
+		color: $color-one;
+		font-size: 14px;
+		line-height: 14px;
+		min-width: 360px;
+		margin-right: 40px;
+		&::placeholder {
+			color: #a8b2bf;
+		}
+	}
+	
+	&__btn {
+		line-height: 1;
+		padding: 23px 39px;
+	}
+	&__info {
+		margin-top: 20px;
+		font-weight: 700;
+		&--valid {
+			color: $color-one;
+		}
+		&--invalid {
+			color: $color-two;
+		}
+	}
+}
 // slick slider custom styles start
 
 .slick-dots {

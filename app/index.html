@@ -24,7 +24,7 @@
 				<a href="#" class="menu__link">Возможности</a>
 				<a href="#tech" class="menu__link">Партнеры</a>
 			</nav>
-			<a href="#order" class="header__btn">Оставить заявку</a>
+			<a href="#order" class="header__btn js_scroll">Оставить заявку</a>
 
 		</div>
 	</header>
@@ -33,12 +33,12 @@
 			<div class="container promo__container">
 				<div class="slider">
 					<div class="slider__item">
-						<h2 class="slider__title">Расширяем возможности предоставления качественных медицинских </h2>
+						<h2 class="slider__title title">Расширяем возможности предоставления качественных медицинских </h2>
 						<p class="slider__text">«Дневник здоровья» – новый сервис для самоконтроля показателей состояния здоровья, разработанный для участников программы «Мое здоровье».</p>
 						<a href="#" class="slider__link btn-red">Узнать больше</a>
 					</div>
 					<div class="slider__item">
-						<h2 class="slider__title">Расширяем возможности предоставления качественных медицинских </h2>
+						<h2 class="slider__title title">Расширяем возможности предоставления качественных медицинских </h2>
 						<p class="slider__text">«Дневник здоровья» – новый сервис для самоконтроля показателей состояния здоровья, разработанный для участников программы «Мое здоровье».</p>
 						<a href="#" class="slider__link btn-red">Узнать больше</a>
 					</div>
@@ -47,7 +47,7 @@
 		</section>
 		<section class="about" id="about">
 			<div class="container about__container">
-				<h2 class="about__title">Что такое «Дневник здоровья»?</h2>
+				<h2 class="about__title title">Что такое «Дневник здоровья»?</h2>
 				<h3 class="about__subtitle">Дневник пациента — это удобный онлайн-сервис:</h3>
 				<ul class="about__list">
 					<li class="about__item">
@@ -66,13 +66,20 @@
 						<div class="about__text">Получайте рекомендации, созданные специально для вас</div>
 					</li>
 				</ul>
-				<a href="#order" class="about__btn btn-red">Оставить заявку</a>
+				<a href="#order" class="about__btn btn-red js_scroll">Оставить заявку</a>
 
 			</div>
 		</section>
 		<section class="order" id="order">
 			<div class="container order__container">
-
+				<h2 class="order__title title">Получите бесплатный доступ к «Дневнику здоровья»</h2>
+				<p class="order__text">Оставьте свою электронную почту<br>
+					и вы узнаете о запуске данного сервиса первым!</p>
+				<form action="" method="post" class="order__form" name="emailForm">
+					<input type="email" name="emailFormInput" class="order__input" placeholder="Ваш Email" required>
+					<button class="order__btn btn-red" type="submit" >Отправить</button>
+					<p class="order__info" style="display: none"></p>
+				</form>
 			</div>
 		</section>
 
@@ -82,6 +89,26 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="js/slick.min.js"></script>
 	<script src="js/common.js"></script>
+	<script>
+		$('.order__btn').on('click', function(event, mail) {
+			event.preventDefault();
+			ValidateEmail(document.emailForm.emailFormInput);
+		});
+
+		function ValidateEmail(inputText) {
+			var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			if (inputText.value.match(mailformat)) {
+				document.emailForm.emailFormInput.focus();
+				$(".order__info").removeClass('order__info--invalid').addClass('order__info--valid').fadeIn(300).html('Письмо отправлено на вашу почту');
+				return true;
+			} else {
+				document.emailForm.emailFormInput.focus();
+				$(".order__info").removeClass('order__info--valid').addClass('order__info--invalid').fadeIn(300).html('Вы ввели неправильный e-mail адрес');
+				return false;
+			}
+		}
+
+	</script>
 
 </body>
 
